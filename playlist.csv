@@ -1,0 +1,185 @@
+#,Video ID,Title,Duration,Seconds
+1,WiGU_ZB-u0w,"Cap. 1 – Visão Geral – 1. Bem-vindo!",5m 9s,309
+2,jXA0O5b-F1g,"Cap. 1 – Visão Geral – 2. Por que Go?",6m 10s,370
+3,CvH9fC2eYO8,"Cap. 1 – Visão Geral – 3. Sucesso",5m 0s,300
+4,n7PZo55Wl5A,"Cap. 1 – Visão Geral – 4. Recursos",3m 3s,183
+5,V9zfX8Yhc9g,"Cap. 1 – Visão Geral – 5. Como esse curso funciona",3m 5s,185
+6,B5sy5v2dT9Y,"Cap. 1 – Visão Geral – 6. Update: Exercícios",3m 9s,189
+7,Qf2645sTqH0,"Cap. 2 – Variáveis, Valores & Tipos – 1. Go Playground",9m 14s,554
+8,tdZ2I2RZ7JI,"Cap. 2 – Variáveis, Valores & Tipos – 2. Hello world!",13m 46s,826
+9,QT7YvrEWMGE,"Cap. 2 – Variáveis, Valores & Tipos – 3. Operador curto de declaração",19m 2s,1142
+10,YAGKHSNWdEE,"Cap. 2 – Variáveis, Valores & Tipos – 4. A palavra-chave var",5m 20s,320
+11,DazALie4u5E,"Cap. 2 – Variáveis, Valores & Tipos – 5. Explorando tipos",6m 15s,375
+12,Ruwp2xLD_AI,"Cap. 2 – Variáveis, Valores & Tipos – 6. Valor zero",6m 28s,388
+13,IjDiONSi-tI,"Cap. 2 – Variáveis, Valores & Tipos – 7. O pacote fmt",10m 54s,654
+14,DGHYibXY6Qk,"Cap. 2 – Variáveis, Valores & Tipos – 8. Criando seu próprio tipo",4m 5s,245
+15,s0UYWJUz30k,"Cap. 2 – Variáveis, Valores & Tipos – 9. Conversão, não coerção",5m 53s,353
+16,5K17jFDXvWw,"Cap. 3 – Exercícios: Nível #1 – 1",3m 2s,182
+17,Q7ZrIDMj9zc,"Cap. 3 – Exercícios: Nível #1 – 2",2m 22s,142
+18,VkuZ4QMnoZM,"Cap. 3 – Exercícios: Nível #1 – 3",2m 15s,135
+19,5-0S-gefNe0,"Cap. 3 – Exercícios: Nível #1 – 4",2m 46s,166
+20,O0r318FN_Uw,"Cap. 3 – Exercícios: Nível #1 – 5",4m 1s,241
+21,OINd35-02xo,"Cap. 3 – Exercícios: Nível #1 – 6",8m 5s,485
+22,voisg61hPXA,"Cap. 4 – Fundamentos da Programação – 1. Tipo booleano",6m 53s,413
+23,C55_dhNmvrQ,"Cap. 4 – Fundamentos da Programação – 2. Como os computadores funcionam",17m 54s,1074
+24,3yIKCLSWAHA,"Cap. 4 – Fundamentos da Programação – 3. Tipos numéricos",14m 2s,842
+25,g0j0XaVk2EI,"Cap. 4 – Fundamentos da Programação – 4. Overflow",2m 39s,159
+26,AcyS0_BAy7U,"Cap. 4 – Fundamentos da Programação – 5. Tipo string (cadeias de caracteres)",10m 42s,642
+27,Ma3M7Pdd7HI,"Cap. 4 – Fundamentos da Programação – 6. Sistemas numéricos",10m 25s,625
+28,Yaw80pKukMc,"Cap. 4 – Fundamentos da Programação – 7. Constantes",6m 23s,383
+29,1IduyaGMO3g,"Cap. 4 – Fundamentos da Programação – 8. Iota",4m 56s,296
+30,USntMXkOihY,"Cap. 4 – Fundamentos da Programação – 9. Deslocamento de bits",7m 24s,444
+31,onK_nd--g1g,"Cap. 5 – Exercícios: Nível #2 – 1",2m 49s,169
+32,8zEZw19gRTo,"Cap. 5 – Exercícios: Nível #2 – 2",4m 38s,278
+33,12o81rTFu_w,"Cap. 5 – Exercícios: Nível #2 – 3",1m 2s,62
+34,NxntmGW62Ag,"Cap. 5 – Exercícios: Nível #2 – 4",2m 44s,164
+35,LSKCaxazLGs,"Cap. 5 – Exercícios: Nível #2 – 5",59s,59
+36,M07eDn7FyxI,"Cap. 5 – Exercícios: Nível #2 – 6",1m 58s,118
+37,9eMbGsKcWlc,"Cap. 5 – Exercícios: Nível #2 – 7",7m 45s,465
+38,1G-tbQ6UE_A,"Cap. 6 – Fluxo de Controle – 1. Entendendo fluxo de controle",6m 35s,395
+39,g_Qdxi1b2cE,"Cap. 6 – Fluxo de Controle – 2. Loops: inicialização, condição, pós",4m 41s,281
+40,EL9wo6Zrz9o,"Cap. 6 – Fluxo de Controle – 3. Loops: nested loop (repetição hierárquica)",6m 55s,415
+41,QDaiqhTq3TA,"Cap. 6 – Fluxo de Controle – 4. Loops: a declaração for",10m 39s,639
+42,eGdB8FMCZ0s,"Cap. 6 – Fluxo de Controle – 5. Loops: break & continue",5m 17s,317
+43,hu0qcmbhH8s,"Cap. 6 – Fluxo de Controle – 6. Loops: utilizando ascii",6m 19s,379
+44,LBlrrV0iRKg,"Cap. 6 – Fluxo de Controle – 7. Condicionais: a declaração if",3m 45s,225
+45,ZfCgoVaxMGE,"Cap. 6 – Fluxo de Controle – 8. Condicionais: if, else if, else",3m 55s,235
+46,WFFidtqPfhk,"Cap. 6 – Fluxo de Controle – 9. Condicionais: a declaração switch",15m 18s,918
+47,v6HnDiPyynA,"Cap. 6 – Fluxo de Controle – 10. Condicionais: a declaração switch pt. 2 & documentação",5m 14s,314
+48,Y5HamAGQzUg,"Cap. 6 – Fluxo de Controle – 11. Operadores lógicos condicionais",6m 19s,379
+49,xXUTHJzJNgM,"Cap. 7 – Exercícios: Nível #3 – 1",2m 23s,143
+50,w_JW1bWT08s,"Cap. 7 – Exercícios: Nível #3 – 2",3m 13s,193
+51,2y7qV_9SsiI,"Cap. 7 – Exercícios: Nível #3 – 3",2m 1s,121
+52,bWvpNLBSEKk,"Cap. 7 – Exercícios: Nível #3 – 4",2m 26s,146
+53,pIVF9vf2wAc,"Cap. 7 – Exercícios: Nível #3 – 5",1m 33s,93
+54,VsDnqhpFVZI,"Cap. 7 – Exercícios: Nível #3 – 6",1m 2s,62
+55,haYnFVssUr4,"Cap. 7 – Exercícios: Nível #3 – 7",1m 39s,99
+56,mm3JM2ZG0us,"Cap. 7 – Exercícios: Nível #3 – 8",2m 7s,127
+57,XxQQOHHQCwY,"Cap. 7 – Exercícios: Nível #3 – 9",3m 9s,189
+58,3DP6lzRLkdw,"Cap. 7 – Exercícios: Nível #3 – 10",3m 41s,221
+59,i_3O4ooSVCM,"Cap. 8 – Agrupamentos de Dados – 1. Array",7m 46s,466
+60,MMzTlWZ9Gjw,"Cap. 8 – Agrupamentos de Dados – 2. Slice: literal composta",7m 15s,435
+61,l6O8HWaoy_w,"Cap. 8 – Agrupamentos de Dados – 3. Slice: for range",9m 11s,551
+62,G0rxcnojV_U,"Cap. 8 – Agrupamentos de Dados – 4. Slice: fatiando ou deletando de uma fatia",11m 25s,685
+63,MbvABKiAABA,"Cap. 8 – Agrupamentos de Dados – 5. Slice: anexando a uma slice",8m 3s,483
+64,IMO5_ancK9w,"Cap. 8 – Agrupamentos de Dados – 6. Slice: make",9m 39s,579
+65,o3yoYGWqrDE,"Cap. 8 – Agrupamentos de Dados – 7. Slice: slice multi-dimensional",11m 11s,671
+66,dRNNC7VpztE,"Cap. 8 – Agrupamentos de Dados – 8. Slice: a surpresa do array subjacente",7m 19s,439
+67,clobcQqAgos,"Cap. 8 – Agrupamentos de Dados – 9. Maps: introdução",9m 37s,577
+68,7a6I-GnqtSE,"Cap. 8 – Agrupamentos de Dados – 10. Maps: range & deletando",6m 24s,384
+69,cjUFrS3hqgU,"Cap. 9 – Exercícios: Nível #4 – 1",2m 55s,175
+70,xpeExQ5C5S8,"Cap. 9 – Exercícios: Nível #4 – 2",1m 58s,118
+71,Wzc5VOjh-XQ,"Cap. 9 – Exercícios: Nível #4 – 3",5m 30s,330
+72,8Lym_4_dwOQ,"Cap. 9 – Exercícios: Nível #4 – 4",2m 49s,169
+73,gA1cTnWjPaU,"Cap. 9 – Exercícios: Nível #4 – 5",3m 51s,231
+74,KOhQCm8f8AE,"Cap. 9 – Exercícios: Nível #4 – 6",4m 2s,242
+75,f4lvrtXsGIM,"Cap. 9 – Exercícios: Nível #4 – 7",6m 27s,387
+76,rfQkR1bH3qw,"Cap. 9 – Exercícios: Nível #4 – 8",6m 42s,402
+77,AKPdowl7tsw,"Cap. 9 – Exercícios: Nível #4 – 9",2m 52s,172
+78,2cx79-nwNQU,"Cap. 9 – Exercícios: Nível #4 – 10",1m 38s,98
+79,EaOGcmXo4F8,"Cap. 10 – Structs – 1. Struct",4m 5s,245
+80,KBFprVi_haM,"Cap. 10 – Structs – 2. Structs embutidos",3m 30s,210
+81,dKaElWlGKo0,"Cap. 10 – Structs – 3. Lendo a documentação",7m 39s,459
+82,Y4MKS3gJQ9Q,"Cap. 10 – Structs – 4. Structs anônimos",1m 35s,95
+83,OQMOIcZ-ShY,"Cap. 11 – Exercícios: Nível #5 – 1",7m 5s,425
+84,uDajGJbXP6A,"Cap. 11 – Exercícios: Nível #5 – 2",8m 52s,532
+85,ji14zPQgmN8,"Cap. 11 – Exercícios: Nível #5 – 3",6m 13s,373
+86,uNnLSuRqBuY,"Cap. 11 – Exercícios: Nível #5 – 4",5m 51s,351
+87,PPOBe49M8V0,"Cap. 12 – Funções – 1. Sintaxe",20m 23s,1223
+88,pV5OEqIRPh4,"Cap. 12 – Funções – 2. Desenrolando (enumerando) uma slice",6m 8s,368
+89,zxVqQ59YfSY,"Cap. 12 – Funções – 3. Defer",8m 20s,500
+90,YrCt7Wo2aAQ,"Cap. 12 – Funções – 4. Métodos",5m 26s,326
+91,2zTENBJTlD0,"Cap. 12 – Funções – 5. Interfaces & polimorfismo",21m 47s,1307
+92,pp8NKaoyefQ,"Cap. 12 – Funções – 6. Funções anônimas",4m 4s,244
+93,j9C66R4BMWM,"Cap. 12 – Funções – 7. Func como expressão",3m 6s,186
+94,9Oxmya_A-Sc,"Cap. 12 – Funções – 8. Retornando uma função",5m 44s,344
+95,u8qBzOAhbRM,"Cap. 12 – Funções – 9. Callback",4m 10s,250
+96,mOM0qTB5ppU,"Cap. 12 – Funções – 10. Closure",4m 50s,290
+97,1-pop5h5RAs,"Cap. 12 – Funções – 11. Recursividade",14m 25s,865
+98,Uuj3-PrTk-Q,"Cap. 13 – Exercícios: Nível #6 – 1",1m 45s,105
+99,ZLOyRrhSydk,"Cap. 13 – Exercícios: Nível #6 – 2",5m 49s,349
+100,EoaMCgbqKSI,"Cap. 13 – Exercícios: Nível #6 – 3",1m 7s,67
+101,HxdO5sm3cRY,"Cap. 13 – Exercícios: Nível #6 – 4",5m 44s,344
+102,3pbmLfcgN2s,"Cap. 13 – Exercícios: Nível #6 – 5",12m 31s,751
+103,NAXWCqhJIEU,"Cap. 13 – Exercícios: Nível #6 – 6",56s,56
+104,ePh12R5jnIM,"Cap. 13 – Exercícios: Nível #6 – 7",1m 10s,70
+105,JS5G5O4LOVI,"Cap. 13 – Exercícios: Nível #6 – 8",1m 44s,104
+106,EXQknIy6NE0,"Cap. 13 – Exercícios: Nível #6 – 9",3m 1s,181
+107,LDJF2ceCRDE,"Cap. 13 – Exercícios: Nível #6 – 10",3m 4s,184
+108,cOOH6mKWNs8,"Cap. 13 – Exercícios: Nível #6 – 11",3m 25s,205
+109,l2YJ-5GpGr8,"Cap. 14 – Ponteiros – 1. O que são ponteiros?",6m 23s,383
+110,0slBes2RYgc,"Cap. 14 – Ponteiros – 2. Quando usar ponteiros",6m 52s,412
+111,lSAVf0RgmHc,"Cap. 15 – Exercícios: Nível #7 – 1",1m 3s,63
+112,XVd-y0t5fno,"Cap. 15 – Exercícios: Nível #7 – 2",5m 37s,337
+113,jnnIgvV0_yA,"Cap. 16 – Aplicações – 1. Documentação JSON",9m 45s,585
+114,-tU2PSY8F5w,"Cap. 16 – Aplicações – 2. JSON marshal (ordenação)",10m 57s,657
+115,mcbj-wy8Ro8,"Cap. 16 – Aplicações – 3. JSON unmarshal (desordenação)",15m 31s,931
+116,S4hEdA0RPVI,"Cap. 16 – Aplicações – 4. A interface Writer",13m 44s,824
+117,b67JIGYM6Hc,"Cap. 16 – Aplicações – 5. O pacote sort",12m 6s,726
+118,0E-q22d3QD4,"Cap. 16 – Aplicações – 6. Customizando o sort",20m 56s,1256
+119,4vCb7jmwkzM,"Cap. 16 – Aplicações – 7. bcrypt",20m 9s,1209
+120,-wHOZpi697M,"Cap. 17 – Exercícios: Nível #8 – 1",5m 11s,311
+121,oUsTxBwHaMM,"Cap. 17 – Exercícios: Nível #8 – 2",6m 36s,396
+122,Y1Ym6Ai3uys,"Cap. 17 – Exercícios: Nível #8 – 3",7m 41s,461
+123,fZZclCKnr7k,"Cap. 17 – Exercícios: Nível #8 – 4",2m 2s,122
+124,3hidzcEZ0KE,"Cap. 17 – Exercícios: Nível #8 – 5",21m 30s,1290
+125,unofca9ooS4,"Cap. 18 – Concorrência – 1. Concorrência vs. paralelismo",7m 39s,459
+126,4jXSU2jw3Ag,"Cap. 18 – Concorrência – 2. Goroutines & WaitGroups",13m 55s,835
+127,0qGILXmLfMM,"Cap. 18 – Concorrência – 3. Discussão: Condição de corrida",9m 22s,562
+128,XxG7qqJzDKk,"Cap. 18 – Concorrência – 4. Na prática: Condição de corrida",9m 42s,582
+129,egd4WHJMwC0,"Cap. 18 – Concorrência – 5. Mutex",3m 38s,218
+130,iFlQ2yAYcp4,"Cap. 18 – Concorrência – 6. Atomic",5m 4s,304
+131,CgrYtlaOgCg,"Cap. 19 – Ambiente de Desenvolvimento – 1. O terminal",12m 31s,751
+132,geLSoE5D0xA,"Cap. 19 – Ambiente de Desenvolvimento – 2. Go Workspace",6m 59s,419
+133,1E3KMnYnqCk,"Cap. 19 – Ambiente de Desenvolvimento – 3. IDEs",7m 10s,430
+134,kJNq487dt7w,"Cap. 19 – Ambiente de Desenvolvimento – 4. Comandos Go",6m 59s,419
+135,XQUMNuGyVa4,"Cap. 19 – Ambiente de Desenvolvimento – 5. Repositórios no GitHub",16m 45s,1005
+136,t-S2s1K3b5Q,"Cap. 19 – Ambiente de Desenvolvimento – 6. Explorando o GitHub",4m 45s,285
+137,k0pV_JoiZbI,"Cap. 19 – Ambiente de Desenvolvimento – 7. Compilação cruzada",6m 55s,415
+138,SO-RFPSqD3c,"Cap. 19 – Ambiente de Desenvolvimento – 8. Pacotes",11m 3s,663
+139,Y9QEvz4D_9E,"Cap. 20 – Exercícios: Nível #9 – 1",10m 39s,639
+140,iu632z7i3MM,"Cap. 20 – Exercícios: Nível #9 – 2",11m 22s,682
+141,cCWvFijhObU,"Cap. 20 – Exercícios: Nível #9 – 3",8m 44s,524
+142,q_tHbwD0n6w,"Cap. 20 – Exercícios: Nível #9 – 4",1m 54s,114
+143,58_JeZA3V_0,"Cap. 20 – Exercícios: Nível #9 – 5",5m 46s,346
+144,weEJtEyl79o,"Cap. 20 – Exercícios: Nível #9 – 6",4m 20s,260
+145,t0jraJONVzs,"Cap. 20 – Exercícios: Nível #9 – 7",1m 17s,77
+146,jF0xuhnPkDg,"Cap. 21 – Canais – 1. Entendendo canais",7m 12s,432
+147,vYYHoKLb_8I,"Cap. 21 – Canais – 2. Canais direcionais & Utilizando canais",9m 43s,583
+148,B1UArMoYDJ0,"Cap. 21 – Canais – 3. Range e close",6m 20s,380
+149,dp8s5jAc7h0,"Cap. 21 – Canais – 4. Select",19m 27s,1167
+150,wWQ0BbbQ-28,"Cap. 21 – Canais – 5. A expressão comma ok",7m 52s,472
+151,VJyryKEMleU,"Cap. 21 – Canais – 6. Convergência",20m 53s,1253
+152,8X6eOnSJu5g,"Cap. 21 – Canais – 7. Divergência",18m 34s,1114
+153,PhTtrrsUH8c,"Cap. 21 – Canais – 8. Context",16m 52s,1012
+154,MtjbOX82l7k,"Cap. 22 – Exercícios: Nível #10 – 1",1m 36s,96
+155,U_7OajGsr3A,"Cap. 22 – Exercícios: Nível #10 – 2",54s,54
+156,0ETA-wzuKj0,"Cap. 22 – Exercícios: Nível #10 – 3",2m 28s,148
+157,mi4tai4VpDw,"Cap. 22 – Exercícios: Nível #10 – 4",5m 40s,340
+158,1eodjtumGlA,"Cap. 22 – Exercícios: Nível #10 – 5",1m 37s,97
+159,o3C_Cy2bn7Q,"Cap. 22 – Exercícios: Nível #10 – 6",3m 10s,190
+160,eoA4jVD7RQE,"Cap. 22 – Exercícios: Nível #10 – 7",4m 34s,274
+161,lkWhk-vr08k,"Cap. 23 – Tratamento de Erros – 1. Entendendo erros",8m 33s,513
+162,FBRaRkmOPnw,"Cap. 23 – Tratamento de Erros – 2. Verificando erros",10m 32s,632
+163,iDyei7w0Uts,"Cap. 23 – Tratamento de Erros – 3. Print & Log",18m 15s,1095
+164,pKh7ApRSDXk,"Cap. 23 – Tratamento de Erros – 4. Recover",5m 42s,342
+165,k7KO5vaDKDg,"Cap. 23 – Tratamento de Erros – 5. Erros com informações adicionais",14m 6s,846
+166,Yo0mu9YCkrY,"Cap. 24 – Exercícios: Nível #11 – 1",2m 38s,158
+167,WNufm9QsZGo,"Cap. 24 – Exercícios: Nível #11 – 2",3m 17s,197
+168,DFWKS4EGQKc,"Cap. 24 – Exercícios: Nível #11 – 3",12m 29s,749
+169,q3pU5GIGwNQ,"Cap. 24 – Exercícios: Nível #11 – 4",4m 38s,278
+170,32ZyotZdUNA,"Cap. 24 – Exercícios: Nível #11 – 5",3m 10s,190
+171,UnspXB5jQyI,"Cap. 25 – Documentação – 1. Introdução",2m 47s,167
+172,dWbZHW8MNrk,"Cap. 25 – Documentação – 2. go doc",4m 2s,242
+173,8oZKxiJpXyY,"Cap. 25 – Documentação – 3. godoc",3m 35s,215
+174,lf2MOu_dIxA,"Cap. 25 – Documentação – 4. godoc.org",8m 0s,480
+175,6g8MLNTGzpE,"Cap. 25 – Documentação – 5. Escrevendo Documentação",15m 6s,906
+176,Dv2oZoA9Lpo,"Cap. 26 – Exercícios: Nível #12 – 1",7m 33s,453
+177,3wYPwPXAajM,"Cap. 26 – Exercícios: Nível #12 – 2",3m 9s,189
+178,trULpDW20sU,"Cap. 26 – Exercícios: Nível #12 – 3",2m 11s,131
+179,JjzjvbFAv2A,"Cap. 27 – Testes & Benchmarks – 1. Introdução",13m 50s,830
+180,uTH_OAxaIiI,"Cap. 27 – Testes & Benchmarks – 2. Testes em tabela",8m 6s,486
+181,a3_dz_xpmQ0,"Cap. 27 – Testes & Benchmarks – 3. Testes como exemplos",9m 28s,568
+182,p5ihn7ou608,"Cap. 27 – Testes & Benchmarks – 4. go fmt, govet e golint",4m 10s,250
+183,0kNNQVNNZC8,"Cap. 27 – Testes & Benchmarks – 5. Benchmarks",9m 8s,548
+184,P6I3hzpSaA4,"Cap. 27 – Testes & Benchmarks – 6. Cobertura",2m 42s,162
