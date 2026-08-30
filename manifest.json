@@ -1,0 +1,13 @@
+{
+  "name":"Aprenda Go — Controle de Estudos",
+  "short_name":"Estudo Go",
+  "description":"Controle de progresso das aulas de Go",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"portrait-primary",
+  "background_color":"#f5f7fa",
+  "theme_color":"#0B7EA4",
+  "lang":"pt-BR",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
