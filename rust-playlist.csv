@@ -1,43 +1,43 @@
 #,Video ID,Title,Duration,Seconds
-1,A9DpfG7qSeQ,Introdução ao Rust,31m 56s,1916
-2,LevoANVdS0k,Instalação e ambiente,40m 40s,2440
-3,JMlSNWqRER0,Variáveis e mutabilidade,14m 11s,851
-4,4aeP-DJRNh4,Tipos e inferência,23m 29s,1409
-5,5c5DLP8f-oc,Funções e controle de fluxo,31m 19s,1879
-6,6ac1t5FxKPY,Ownership e Borrowing,32m 58s,1978
-7,nQY_xG8gR4A,Referências e slices,29m 14s,1754
-8,APa1DLO8az0,Structs,22m 46s,1366
-9,8Y5q_hH5azc,Enums e Pattern Matching,27m 38s,1658
-10,8PHK0r_QQzs,Option e Result,31m 2s,1862
-11,5L0R8W6xXOM,Collections,42m 14s,2534
-12,Mc7nYx6_1nI,Strings em Rust,28m 47s,1727
-13,8bXn4Lr6z4g,Generics,23m 16s,1396
-14,3VYyT1Jm9cI,Traits,30m 19s,1819
-15,8Y0YdOqWm0s,Lifetimes,35m 12s,2112
-16,3M_Fu6WgWjY,Closures,25m 55s,1555
-17,1fX3p2P0F7I,Iterators,38m 3s,2283
-18,9dL6Qk3nQv0,Smart Pointers,34m 28s,2068
-19,6p3rB3u2V4M,Interior Mutability,27m 40s,1660
-20,2Y0w9R3J5Hk,Concorrência,39m 18s,2358
-21,1m9D5u7L4Ks,Threads e Channels,31m 45s,1905
-22,5r7W3Q2aJ8N,Async e Await,46m 10s,2770
-23,7k3M2s1V9Qp,Error Handling,30m 5s,1805
-24,2n6F8x4K1dS,Testes,34m 50s,2090
-25,4g7T3y6P8wL,Crates e Modules,27m 22s,1642
-26,9h2B5m7C1qR,Cargo,24m 17s,1457
-27,6d4J9v3S2xK,Documentação,19m 46s,1186
-28,3p8N1r5H7tV,Macros,32m 33s,1953
-29,8s2L6f4Q9mX,Unsafe Rust,26m 21s,1581
-30,5v9C3k7R1pM,FFI,29m 44s,1784
-31,1q7D4h8T3nB,WebAssembly,35m 26s,2126
-32,4r2K8m6P9sV,Arquitetura de projetos,38m 15s,2295
-33,7t5H3n1Q8wR,CLI em Rust,31m 8s,1868
-34,2m9V4k7S1pL,HTTP e APIs,44m 12s,2652
-35,8q3N6d2R5hJ,Banco de dados,36m 19s,2179
-36,5w1P7t4M9kQ,Projeto prático,48m 41s,2921
-37,3h8R2n6V1qS,Projeto avançado,42m 57s,2577
-38,7vE-48FSjps,Encerramento e próximos passos,41m 42s,2502
-39,wL8svsVAnlM,Rust avançado,51m 52s,3112
-40,qVQ_RtCA6XE,Performance,28m 19s,1699
-41,VpjyQIpeEfo,Ecossistema Rust,31m 20s,1880
-42,o-Ey-xG-52U,Conclusão,7m 34s,454
+1,A9DpfG7qSeQ,"Aprendendo 🦀 Rust 🦀 do zero - parte 01 - Instalação, Hello world e Cargo",31m 56s,1916
+2,LevoANVdS0k,Aprendendo 🦀 Rust 🦀 do zero - parte 02 - Adivinhe o número,40m 40s,2440
+3,JMlSNWqRER0,Aprendendo 🦀 Rust 🦀 do zero - parte 03 - Adivinhe o número,14m 11s,851
+4,4aeP-DJRNh4,Aprendendo 🦀 Rust 🦀 do zero - parte 04 - Conceitos de programação,23m 29s,1409
+5,5c5DLP8f-oc,Aprendendo 🦀 Rust 🦀 do zero - parte 05 - Tipos de dados,31m 19s,1879
+6,2L6JSwJJhOc,Integer overflow em Rust🦀,6m 30s,390
+7,PD3VFF5mTK4,Aprendendo 🦀 Rust 🦀 do zero - parte 06 - Funções em Rust,21m 58s,1318
+8,S1bOxymdxgo,Aprendendo 🦀 Rust 🦀 do zero - parte 07 - Controle de fluxo,36m 57s,2217
+9,kKToos4AexY,Aprendendo 🦀 Rust 🦀 do zero - parte 08 - Loops em controle de fluxo,14m 4s,844
+10,jCTnmt4SgSE,Entenda OWNERSHIP em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 09,48m 35s,2915
+11,ChhOIdRGFC0,Referencias em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 10,27m 39s,1659
+12,6xxUTMfXH2I,Slice em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 11,32m 13s,1933
+13,6LXKBwKN4-Q,Structs em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 12,24m 6s,1446
+14,nqZV7_lZoOg,Aprendendo 🦀 Rust 🦀 do zero - parte 13,33m 53s,2033
+15,Bpp1O-N-NAc,Métodos em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 14,30m 28s,1828
+16,8ENzhV2dnhA,Intro aos Enums em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 15,22m 13s,1333
+17,JnGvjJ7Jlv8,Enum Option em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 16,17m 5s,1025
+18,z6F9U5cpy_g,Match em 🦀 Rust 🦀 - Aprendendo rust do zero - parte 17,33m 55s,2035
+19,saoxm0ki6XM,"if let, let else, Aprendendo 🦀 Rust 🦀 do zero - parte 18",31m 25s,1885
+20,LNbaWwaEbfU,"Crates, packages e libraries - Aprendendo 🦀 Rust 🦀 do zero - parte 19",39m 42s,2382
+21,dTCwSSznyB8,DOMINGÃO DO RUSTÃO 🦀 - Paths - Aprendendo 🦀 Rust 🦀 do zero - parte 20,46m 51s,2811
+22,TN6cZyl2624,Importando paths ao escopo - Aprendendo 🦀 Rust 🦀 do zero - parte 21,37m 59s,2279
+23,OMgjhkx05MU,DOMINGÃO DO RUSTÃO 🦀 Aprendendo 🦀 Rust 🦀 do zero - parte 22,36m 8s,2168
+24,t14f9TL3zcU,Mais sobre Strings em Rust - Aprendendo 🦀 Rust 🦀 do zero - parte 23,48m 49s,2929
+25,00XFnzViF6w,HashMaps em Rust - Aprendendo 🦀 Rust 🦀 do zero - parte 24,25m 5s,1505
+26,Wn65JcMdzb8,Live coding Rust - Desafios propostos pelo livro - Aprendendo Rust 🦀 do zero - parte 25,51m 46s,3106
+27,dcR-AnpiGCg,Live Coding Rust - Aprendendo 🦀 Rust 🦀 do zero - parte 26,1h 3m 31s,3811
+28,Hw-961EoTBk,Tratamento de Erros 🦀 Aprendendo 🦀 Rust 🦀 do zero - parte 27,27m 18s,1638
+29,skOp3A-s8kA,Enum Result em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 28,54m 38s,3278
+30,hMyciRVyHEY,Diretrizes para tratar erros 🦀 Aprendendo Rust 🦀 do zero - parte 29,33m 10s,1990
+31,u8mtVi3cDDI,C++ std::vector vs Rust Vec,13m 15s,795
+32,r1ew2ksyZ0A,Programação Genérica 🦀 Aprendendo Rust 🦀 do zero - parte 30,46m 28s,2788
+33,Ga26rsk76FY,Traits em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 31,1h 13m 53s,4433
+34,PqiFEToQqMw,Lifetimes em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 32,1h 3m 19s,3799
+35,4nvk7JFv_X4,Testes em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 33,12m 23s,743
+36,AHjidQIO-pY,Livecoding minigrep Rust 🦀 Aprendendo Rust 🦀 do zero - parte 34,1h 18m 38s,4718
+37,rYjtJSrSnJ0,Livecoding minigrep Rust 🦀 Aprendendo Rust 🦀 do zero - parte 35,51m 32s,3092
+38,7vE-48FSjps,Livecoding minigrep Rust 🦀 Aprendendo Rust 🦀 do zero - parte 36,41m 42s,2502
+39,wL8svsVAnlM,Closures em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 37,51m 52s,3112
+40,qVQ_RtCA6XE,Iteradores em Rust 🦀 Aprendendo Rust 🦀 do zero - parte 38,28m 19s,1699
+41,VpjyQIpeEfo,Praticando Closures e Iterators 🦀 Aprendendo Rust 🦀 do zero - parte 39,31m 20s,1880
+42,o-Ey-xG-52U,Release Profiles do Rust 🦀 Aprendendo Rust 🦀 do zero - parte 40,7m 34s,454
