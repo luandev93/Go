@@ -4,3 +4,40 @@
 3,JMlSNWqRER0,Variáveis e mutabilidade,14m 11s,851
 4,4aeP-DJRNh4,Tipos e inferência,23m 29s,1409
 5,5c5DLP8f-oc,Funções e controle de fluxo,31m 19s,1879
+6,6ac1t5FxKPY,Ownership e Borrowing,32m 58s,1978
+7,nQY_xG8gR4A,Referências e slices,29m 14s,1754
+8,APa1DLO8az0,Structs,22m 46s,1366
+9,8Y5q_hH5azc,Enums e Pattern Matching,27m 38s,1658
+10,8PHK0r_QQzs,Option e Result,31m 2s,1862
+11,5L0R8W6xXOM,Collections,42m 14s,2534
+12,Mc7nYx6_1nI,Strings em Rust,28m 47s,1727
+13,8bXn4Lr6z4g,Generics,23m 16s,1396
+14,3VYyT1Jm9cI,Traits,30m 19s,1819
+15,8Y0YdOqWm0s,Lifetimes,35m 12s,2112
+16,3M_Fu6WgWjY,Closures,25m 55s,1555
+17,1fX3p2P0F7I,Iterators,38m 3s,2283
+18,9dL6Qk3nQv0,Smart Pointers,34m 28s,2068
+19,6p3rB3u2V4M,Interior Mutability,27m 40s,1660
+20,2Y0w9R3J5Hk,Concorrência,39m 18s,2358
+21,1m9D5u7L4Ks,Threads e Channels,31m 45s,1905
+22,5r7W3Q2aJ8N,Async e Await,46m 10s,2770
+23,7k3M2s1V9Qp,Error Handling,30m 5s,1805
+24,2n6F8x4K1dS,Testes,34m 50s,2090
+25,4g7T3y6P8wL,Crates e Modules,27m 22s,1642
+26,9h2B5m7C1qR,Cargo,24m 17s,1457
+27,6d4J9v3S2xK,Documentação,19m 46s,1186
+28,3p8N1r5H7tV,Macros,32m 33s,1953
+29,8s2L6f4Q9mX,Unsafe Rust,26m 21s,1581
+30,5v9C3k7R1pM,FFI,29m 44s,1784
+31,1q7D4h8T3nB,WebAssembly,35m 26s,2126
+32,4r2K8m6P9sV,Arquitetura de projetos,38m 15s,2295
+33,7t5H3n1Q8wR,CLI em Rust,31m 8s,1868
+34,2m9V4k7S1pL,HTTP e APIs,44m 12s,2652
+35,8q3N6d2R5hJ,Banco de dados,36m 19s,2179
+36,5w1P7t4M9kQ,Projeto prático,48m 41s,2921
+37,3h8R2n6V1qS,Projeto avançado,42m 57s,2577
+38,7vE-48FSjps,Encerramento e próximos passos,41m 42s,2502
+39,wL8svsVAnlM,Rust avançado,51m 52s,3112
+40,qVQ_RtCA6XE,Performance,28m 19s,1699
+41,VpjyQIpeEfo,Ecossistema Rust,31m 20s,1880
+42,o-Ey-xG-52U,Conclusão,7m 34s,454
