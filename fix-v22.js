@@ -18,5 +18,4 @@
   normalize();
   window.addEventListener('load',normalize);
   setInterval(normalize,1000);
-  new MutationObserver(normalize).observe(document.body,{subtree:true,childList:true});
 })();
