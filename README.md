@@ -1,6 +1,10 @@
-# Go + Rust + PostgreSQL — Controle de Estudos
+# Aprenda Go + Rust + PostgreSQL — Controle de Estudos
+
+**Versão de referência: 1.0.0 · 2026**
 
 PWA para acompanhar uma jornada contínua de estudos em programação, com progresso independente por trilha e uma **meta global de 1000 horas**.
+
+> **As linguagens são os caminhos. As 1000 horas são a jornada.**
 
 ## Trilhas atuais
 
@@ -10,36 +14,9 @@ PWA para acompanhar uma jornada contínua de estudos em programação, com progr
 | Rust | 42 | independente |
 | PostgreSQL | 35 | independente |
 
-### PostgreSQL
+Cada trilha possui seu próprio histórico de conclusão e seu próprio tempo estudado. O conteúdo continua fiel às playlists catalogadas; não há tentativa de transformar conclusão de vídeo em domínio completo da tecnologia.
 
-A trilha adicionada a partir do catálogo fornecido contém **35 aulas**, preservadas na ordem original, com título, duração em segundos e link direto para cada vídeo.
-
-Os temas presentes incluem:
-
-- instalação e configuração;
-- `psql` e pgAdmin;
-- usuários e bancos;
-- tipos de dados;
-- `CREATE TABLE`;
-- `INSERT`, `SELECT`, `UPDATE`, `DELETE` e `TRUNCATE`;
-- `WHERE`, `ORDER BY`, `LIMIT`, `OFFSET` e `BETWEEN`;
-- agregações e aliases;
-- `INNER JOIN`;
-- views e materialized views;
-- arrays e JSON;
-- tabelas herdadas;
-- subqueries;
-- backup/restauração com `pg_dump`;
-- funções de strings;
-- introdução a procedimentos armazenados.
-
-A trilha está catalogada em `postgresql-playlist.csv`.
-
-## Modelo de progresso
-
-Existem três níveis:
-
-### 1. Meta global — 1000 horas
+## Meta global de 1000 horas
 
 Todo conteúdo concluído contribui para uma única jornada:
 
@@ -53,33 +30,20 @@ Go + Rust + PostgreSQL + futuras trilhas
 
 O tempo de uma aula somente entra na meta quando a aula é marcada como concluída.
 
-### 2. Progresso independente
+## PostgreSQL
 
-Cada trilha possui:
+A trilha PostgreSQL contém **35 aulas**, preservadas na ordem original, com título, duração em segundos e link direto para cada vídeo.
 
-- checkbox próprio;
-- percentual próprio;
-- tempo estudado;
-- tempo restante;
-- total de aulas;
-- armazenamento independente no `localStorage`.
+Os temas catalogados incluem instalação e configuração, `psql`, pgAdmin, usuários e bancos, tipos de dados, tabelas, CRUD, filtros, ordenação, agregações, `JOIN`, views, materialized views, arrays, JSON, tabelas herdadas, subqueries, backup/restauração, funções de strings e introdução a procedimentos armazenados.
 
-Marcar PostgreSQL não altera Go ou Rust.
-
-### 3. Amplitude do conteúdo
-
-O painel de Progresso diferencia:
-
-> **progresso da playlist** ≠ **domínio completo da tecnologia**
-
-O mapa de domínios é uma estimativa visual baseada nos títulos das aulas. Ele não pretende substituir prática, documentação, exercícios ou projetos reais.
+O catálogo está em `postgresql-playlist.csv`.
 
 ## Interface
 
 O frontend segue uma estética **developer-first**, inspirada em IDEs e terminais:
 
 - Go em azul;
-- Rust em laranja;
+- Rust com símbolo oficial em branco sobre o tema escuro, garantindo contraste;
 - PostgreSQL em roxo;
 - painel de progresso geral;
 - meta de 1000 horas;
@@ -88,25 +52,47 @@ O frontend segue uma estética **developer-first**, inspirada em IDEs e terminai
 - filtros de aulas;
 - busca;
 - links diretos para o YouTube;
-- PWA com instalação nativa quando disponibilizada pelo navegador.
+- relógio e data como registro temporal de estudo;
+- linha do tempo de progresso;
+- instalação PWA nativa quando disponibilizada pelo navegador;
+- identidade visual compartilhada entre Go, Rust e PostgreSQL.
 
-## Arquitetura preparada para crescimento
+## Persistência atual
 
-A aplicação foi estruturada para receber novas trilhas conforme a jornada avançar:
+O progresso é salvo automaticamente no navegador através de `localStorage`.
+
+Isso permite funcionamento sem backend, mas o histórico permanece vinculado ao navegador/dispositivo. A linha do tempo atual é um registro local; ela ainda não é um histórico sincronizado em servidor.
+
+## PWA
+
+O projeto utiliza:
+
+- `manifest.json`;
+- `sw.js`;
+- `icon.svg`;
+- Service Worker com cache versionado;
+- instalação nativa quando o navegador reconhece os critérios de PWA.
+
+A arte principal do aplicativo reúne os símbolos/mascotes de Go, Rust e PostgreSQL e é utilizada como identidade do aplicativo.
+
+## Arquitetura atual
 
 ```text
-Linguagem / Tecnologia
-        ↓
-      Curso
-        ↓
-      Aula
-        ↓
-  Progresso individual
-        ↓
-  Meta global de 1000h
+GitHub Pages / PWA
+        │
+        ▼
+Frontend estático
+        │
+        ├── Go — 184 aulas
+        ├── Rust — 42 aulas
+        └── PostgreSQL — 35 aulas
+                │
+                ▼
+       progresso por trilha
+                │
+                ▼
+          meta global 1000h
 ```
-
-O próximo passo natural é transformar esse catálogo em dados dinâmicos, permitindo adicionar novas linguagens sem alterar o núcleo do frontend.
 
 ## Arquivos principais
 
@@ -114,7 +100,10 @@ O próximo passo natural é transformar esse catálogo em dados dinâmicos, perm
 .
 ├── index.html
 ├── style.css
+├── ui-enhancements.css
+├── ui-v19.css
 ├── app.js
+├── ui-enhancements.js
 ├── playlist.csv
 ├── rust-playlist.csv
 ├── postgresql-playlist.csv
@@ -122,42 +111,62 @@ O próximo passo natural é transformar esse catálogo em dados dinâmicos, perm
 ├── sw.js
 ├── icon.svg
 ├── README.md
-└── .github/workflows/
+└── HANDOFF.md
 ```
 
-## Persistência atual
+## Evolução planejada
 
-O progresso é salvo automaticamente no navegador através de `localStorage`.
-
-Isso permite funcionamento sem backend, mas o histórico permanece vinculado ao navegador/dispositivo.
-
-## Próxima evolução
-
-A arquitetura planejada para a evolução do projeto é:
+A aplicação foi desenhada para crescer com a jornada:
 
 ```text
-GitHub Pages / PWA
-        │
-        ▼
-Frontend de Estudos
-        │
-        ▼
-API
-        │
-        ▼
-PostgreSQL / Railway
+Nova linguagem / tecnologia
+          ↓
+       Playlist
+          ↓
+        Aulas
+          ↓
+  Progresso independente
+          ↓
+     Meta global 1000h
+          ↓
+ Histórico ao longo dos anos
 ```
 
-Isso permitirá futuramente:
+Próximas evoluções possíveis:
 
+- catálogo orientado a dados para adicionar novas trilhas sem reconstruir o frontend;
 - login;
 - sincronização entre dispositivos;
-- histórico de estudo;
-- catálogo dinâmico;
-- novas linguagens e cursos;
-- alteração de playlists sem reconstruir o frontend;
-- estatísticas históricas.
+- histórico persistente no servidor;
+- métricas por dia, mês e ano;
+- calendário de estudo;
+- metas personalizadas;
+- integração com PostgreSQL/Neon ou Railway;
+- importação/atualização de playlists;
+- relatórios de evolução.
 
-## Princípio central
+## Princípios de continuidade
 
-> **As linguagens são os caminhos. As 1000 horas são a jornada.**
+1. Não misturar o progresso das linguagens.
+2. Não inventar aulas para completar uma playlist.
+3. Preservar a ordem e a duração dos catálogos.
+4. Diferenciar **playlist concluída** de **domínio da tecnologia**.
+5. Manter a meta global de 1000 horas como métrica de jornada.
+6. Tratar o histórico local como provisório até existir persistência sincronizada.
+7. Priorizar mudanças incrementais e verificáveis.
+
+## Publicação
+
+O projeto é preparado para GitHub Pages e pode ser utilizado como PWA no navegador compatível.
+
+Para testar uma atualização de frontend, use uma query de cache-busting, por exemplo:
+
+```text
+https://luandev93.github.io/Go/?v=20
+```
+
+## Estado da release
+
+**v1.0.0 — baseline funcional e visual.**
+
+Esta versão consolida Go, Rust e PostgreSQL, a meta de 1000 horas, o progresso independente, a linha do tempo local, o relógio/data, o PWA e a identidade visual developer-first. Alterações futuras devem partir deste estado e ser registradas no `HANDOFF.md`.
