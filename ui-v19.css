@@ -1,0 +1,13 @@
+/* v1.9 visual correction: install action belongs to footer chrome; clock keeps date beside time */
+.study-clock{display:grid!important;grid-template-columns:auto auto!important;grid-template-rows:auto auto!important;align-items:center!important;column-gap:10px!important;min-width:185px!important}
+.study-clock .clock-label{grid-column:1/-1!important}
+.study-clock .clock-time{grid-column:1!important;grid-row:2!important;white-space:nowrap!important}
+.study-clock .clock-date{grid-column:2!important;grid-row:2!important;text-align:left!important;white-space:nowrap!important;color:#8ea1b5!important}
+#nativeInstall{position:fixed!important;z-index:120!important;right:18px!important;bottom:92px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;width:auto!important;min-width:42px!important;height:38px!important;padding:0 12px!important;border:1px solid #174f70!important;border-radius:9px!important;background:#071522!important;color:#00a8ff!important;font:800 10px ui-monospace,monospace!important;box-shadow:0 8px 24px rgba(0,0,0,.35)!important}
+#nativeInstall[hidden]{display:none!important}
+#nativeInstall{font-size:0!important}
+#nativeInstall::before{content:'↓';font:800 18px ui-monospace,monospace!important;line-height:1}
+#nativeInstall::after{content:'Instalar';font:800 9px ui-monospace,monospace!important;line-height:1}
+.site-footer{position:relative!important}
+.site-footer .footer-meta{align-items:center!important}
+@media(max-width:800px){.study-clock{min-width:150px!important;column-gap:7px!important}.study-clock .clock-time{font-size:11px!important}.study-clock .clock-date{font-size:8px!important}#nativeInstall{right:12px!important;bottom:96px!important;height:36px!important;padding:0 10px!important}.site-footer{padding-bottom:104px!important}}
