@@ -1,5 +1,5 @@
-const CACHE='aprenda-go-v29';
-const CORE=['./','./index.html','./style.css?v=29','./ui-enhancements.css?v=29','./ui-v19.css?v=29','./app.js?v=29','./playlist.csv','./rust-playlist.csv','./postgresql-playlist.csv','./manifest.json?v=29','./icon.svg?v=29','./go.svg?v=29','./rust.svg?v=29','./postgres.svg?v=29'];
+const CACHE='aprenda-go-v30';
+const CORE=['./','./index.html','./style.css?v=29','./ui-enhancements.css?v=29','./ui-v19.css?v=29','./app.js?v=29','./playlist.csv','./rust-playlist.csv','./postgresql-playlist.csv','./manifest.json?v=29','./icon.svg?v=29','./go.svg?v=29','./rust.svg?v=29','./postgres.svg?v=29','./progress.svg?v=30'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(async cache=>{for(const asset of CORE){try{await cache.add(asset)}catch{}}}).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==location.origin)return;const fresh=/\.(css|js|json|svg)$/.test(url.pathname);event.respondWith(fetch(event.request,{cache:fresh?'no-store':'default'}).then(response=>{if(response&&response.status===200){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response;}).catch(()=>caches.match(event.request).then(r=>r||caches.match(new URL(event.request.url).pathname))));});
