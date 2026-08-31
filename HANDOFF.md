@@ -14,8 +14,6 @@ Aplicação PWA de controle de estudos para registrar uma jornada de longo prazo
 
 O projeto acompanha várias tecnologias simultaneamente, mantendo o progresso de cada trilha independente e somando o tempo concluído a uma **meta global de 1000 horas**.
 
-A intenção é continuar adicionando linguagens, bancos, frameworks e outras tecnologias conforme a jornada evoluir.
-
 ---
 
 ## 2. Estado atual
@@ -156,7 +154,7 @@ O cabeçalho possui:
 
 - horário atualizado em tempo real;
 - data ao lado do horário;
-- identificação `REGISTRO DE ESTUDO`.
+- **sem o rótulo “REGISTRO DE ESTUDO”**.
 
 A função é fornecer contexto temporal para a jornada. O relógio, isoladamente, não constitui registro histórico persistente.
 
@@ -164,60 +162,78 @@ A função é fornecer contexto temporal para a jornada. O relógio, isoladament
 
 ## 9. Identidade visual
 
-Padrão atual:
+Padrão atual aprovado:
 
 - fundo escuro;
 - linguagem visual inspirada em IDE/terminal;
-- Go em azul;
-- Rust com símbolo branco para alto contraste no tema escuro;
-- PostgreSQL em roxo;
+- Go com símbolo oficial em azul;
+- Rust com símbolo oficial em laranja;
+- PostgreSQL com símbolo oficial em azul;
 - Progresso em verde;
 - tipografia monoespaçada nos elementos técnicos;
 - cards e bordas discretas;
 - navegação lateral no desktop;
-- navegação inferior no mobile.
+- navegação inferior no mobile;
+- botão de instalação PWA no rodapé.
 
-O símbolo Rust deve permanecer **branco** quando utilizado sobre o fundo escuro, conforme decisão visual aprovada.
+Os logos das trilhas são **SVG locais fiéis**, sem imagens geradas ou substitutos improvisados.
 
 ---
 
-## 10. Ícone do aplicativo
+## 10. Integridade visual e deduplicação
 
-O PWA utiliza a arte composta por:
+Problema identificado nas iterações anteriores: camadas de correção visual concorrentes (`ui-enhancements.js` + `fix-v22.js`) podiam inserir ou manter mais de um elemento de marca no mesmo item de navegação.
 
-**Golang + Rust + PostgreSQL**.
+Correção definitiva aplicada:
 
-A arte foi definida como identidade principal do aplicativo/atalho.
+- `index.html` contém uma estrutura inicial única por item;
+- `fix-v22.js` remove nós legados de marca antes de inserir o asset canônico;
+- Go/Rust/PostgreSQL usam exclusivamente `go.svg`, `rust.svg` e `postgres.svg`;
+- cada item de navegação termina com **exatamente um** logo;
+- Progresso termina com **exatamente um** `.progress-icon`;
+- `footer-install` possui uma única instância e fica dentro do rodapé;
+- MutationObserver mantém a integridade caso código legado tente alterar a navegação posteriormente.
+
+Esta regra deve ser preservada: **uma função visual = uma fonte de verdade**.
+
+---
+
+## 11. Ícone do aplicativo
+
+O PWA utiliza `icon.svg` como identidade principal do aplicativo.
 
 Não substituir o ícone por um símbolo genérico sem decisão explícita.
 
 ---
 
-## 11. PWA
+## 12. PWA
 
 Arquivos principais:
 
 - `manifest.json`
 - `sw.js`
 - `icon.svg`
+- `go.svg`
+- `rust.svg`
+- `postgres.svg`
 
-O Service Worker usa cache versionado.
+O Service Worker usa cache versionado. A correção atual elevou o cache técnico para **v26** para invalidar artefatos visuais antigos.
 
-A release de produto é **1.0.0**. Os parâmetros `?v=N` usados em URLs e cache são apenas mecanismos técnicos de cache-busting e **não representam a versão do produto**.
+A release de produto continua sendo **v1.0.0**. Os parâmetros `?v=N` e o número do cache são apenas mecanismos técnicos e **não representam a versão do produto**.
 
 ---
 
-## 12. Instalação
+## 13. Instalação
 
 A instalação deve utilizar o mecanismo nativo de PWA do navegador quando disponível.
 
 O botão visual de instalação serve como acionador da instalação nativa quando `beforeinstallprompt` estiver disponível.
 
-Não criar uma instalação simulada nem um download falso de HTML.
+O botão está estruturalmente no rodapé; não criar uma instalação simulada nem um download falso de HTML.
 
 ---
 
-## 13. Persistência
+## 14. Persistência
 
 Atualmente o estado é armazenado no navegador.
 
@@ -233,7 +249,7 @@ A evolução natural é persistência server-side.
 
 ---
 
-## 14. Arquitetura futura
+## 15. Arquitetura futura
 
 A direção arquitetural definida é:
 
@@ -264,7 +280,7 @@ A implementação de backend não deve destruir a simplicidade do frontend atual
 
 ---
 
-## 15. Próxima evolução recomendada
+## 16. Próxima evolução recomendada
 
 Prioridade sugerida:
 
@@ -281,7 +297,7 @@ Prioridade sugerida:
 
 ---
 
-## 16. Regra para novas linguagens
+## 17. Regra para novas linguagens
 
 Ao adicionar uma nova trilha:
 
@@ -296,24 +312,11 @@ Ao adicionar uma nova trilha:
 9. testar desktop e mobile;
 10. invalidar cache do PWA.
 
-Exemplo:
-
-```text
-Python
-TypeScript
-C/C++
-Java
-Kotlin
-Docker
-Kubernetes
-etc.
-```
-
 O núcleo não deve precisar ser reescrito para cada nova tecnologia.
 
 ---
 
-## 17. Regras de continuidade
+## 18. Regras de continuidade
 
 - Não apagar progresso existente sem solicitação explícita.
 - Não misturar estados entre linguagens.
@@ -322,11 +325,13 @@ O núcleo não deve precisar ser reescrito para cada nova tecnologia.
 - Não declarar sincronização enquanto existir somente `localStorage`.
 - Não alterar a identidade visual aprovada sem necessidade.
 - Versionar mudanças de cache separadamente da versão funcional do produto.
-- Atualizar este HANDOFF quando houver mudança arquitetural relevante.
+- Não criar duas implementações para o mesmo componente visual.
+- Toda alteração visual deve passar por validação estrutural antes da entrega.
+- O estado só deve ser entregue como “testável” depois de verificar assets, markup, cache e ausência de duplicações.
 
 ---
 
-## 18. Release baseline
+## 19. Release baseline
 
 **v1.0.0** consolida:
 
@@ -340,6 +345,8 @@ O núcleo não deve precisar ser reescrito para cada nova tecnologia.
 - relógio + data;
 - PWA;
 - identidade visual developer-first;
-- GitHub Pages.
+- GitHub Pages;
+- navegação sem duplicação de ícones;
+- instalação PWA localizada no rodapé.
 
 Este documento é o ponto de continuidade para as próximas sessões de desenvolvimento.
