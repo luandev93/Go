@@ -1,21 +1,28 @@
-/* v1.0.0 — final UI normalization. No image generation; uses the approved existing visual assets. */
+/* v1.1.0 — deterministic visual correction layer.
+   Uses only assets already present in the project or inline vector markup.
+   No external brand image URLs. */
 (()=>{
-  const rustFilter='brightness(0) saturate(100%) invert(48%) sepia(97%) saturate(1826%) hue-rotate(2deg) brightness(103%) contrast(103%)';
-  function normalize(){
-    document.querySelectorAll('.nav-item[data-view="rust"] .brand-icon,.side-link[data-view="rust"] .brand-icon,.course-mark.rust img').forEach(el=>{el.style.filter=rustFilter;el.style.opacity='1'});
-    document.querySelectorAll('.study-clock .clock-label').forEach(el=>el.remove());
-    const clock=document.getElementById('studyClock');
-    if(clock){
-      const d=new Date();
-      let time=clock.querySelector('.clock-time'),date=clock.querySelector('.clock-date');
-      if(!time){time=document.createElement('strong');time.className='clock-time';clock.append(time)}
-      if(!date){date=document.createElement('b');date.className='clock-date';clock.append(date)}
-      time.textContent=d.toLocaleTimeString('pt-BR');
-      date.textContent=d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'});
-    }
-    document.querySelectorAll('.nav-item[data-view="progresso"] .progress-icon').forEach(el=>el.textContent='');
+  const $=id=>document.getElementById(id);
+  const GO='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .07.035.035.07l-.199.303c-.023.036-.082.07-.117.07zM.047 11.306c-.047-.023-.059-.058-.035-.058l.245-.316c.035-.035.082-.058.129-.058h5.328c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07zm2.828 1.075c-.047-.035-.059-.07-.035-.07l.163-.292c.023-.035.07-.07.117-.07h2.337c.047 0 .07.035.07.082l-.023.28c0 .047-.047.082-.082.082zm12.129-2.36c-.736.187-1.239.327-1.963.514-.176.046-.187.058-.34-.117-.174-.199-.303-.327-.548-.444-.737-.362-1.45-.257-2.115.175-.795.514-1.204 1.274-1.192 2.22.011.935.654 1.706 1.577 1.835.795.105 1.46-.175 1.987-.77.105-.13.198-.27.315-.434H10.47c-.245 0-.304-.152-.222-.35.152-.362.432-.97.596-1.274a.315.315 0 0 1 .292-.187h4.253c-.023.316-.023.631-.07.947a4.983 4.983 0 0 1-.958 2.29c-.841 1.11-1.94 1.8-3.33 1.986-1.145.152-2.209-.07-3.143-.77-.865-.655-1.356-1.52-1.484-2.595-.152-1.274.222-2.419.993-3.424.83-1.086 1.928-1.776 3.272-2.02 1.098-.2 2.15-.07 3.096.571.62.41 1.063.97 1.356 1.648.07.105.023.164-.117.2m3.868 6.461c-1.064-.024-2.034-.328-2.852-1.029a3.665 3.665 0 0 1-1.262-2.255c-.21-1.32.152-2.489.947-3.529.853-1.122 1.881-1.706 3.272-1.95 1.192-.21 2.314-.095 3.33.595.923.63 1.496 1.484 1.648 2.605.198 1.578-.257 2.863-1.344 3.962-.771.783-1.718 1.273-2.805 1.495-.315.06-.63.07-.934.106zm2.78-4.72c-.011-.153-.011-.27-.034-.387-.21-1.157-1.274-1.81-2.384-1.554-1.087.245-1.788.935-2.045 2.033-.21.912.234 1.835 1.075 2.21.643.28 1.285.244 1.905-.07.923-.48 1.425-1.228 1.484-2.233z"/></svg>';
+  const PG='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.459 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.479-.839-.963-2.0317-1.415-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.237-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.029.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128z"/></svg>';
+  function navIcon(id){
+    if(id==='go')return GO;
+    if(id==='postgres')return PG;
+    if(id==='rust')return '<img src="./rust-white.svg?v=24" alt="Rust">';
+    return '';
   }
-  normalize();
-  window.addEventListener('load',normalize);
-  setInterval(normalize,1000);
+  function applyBrandIcons(){
+    document.querySelectorAll('.nav-item,.side-link').forEach(button=>{
+      const id=button.dataset.view;if(!id||id==='progresso')return;
+      button.querySelectorAll('img.brand-icon').forEach(img=>img.remove());
+      button.querySelectorAll('.brand-icon-inline').forEach(el=>el.remove());
+      const wrap=document.createElement('span');wrap.className='brand-icon-inline brand-icon '+id+'-brand-icon';wrap.setAttribute('aria-hidden','true');wrap.innerHTML=navIcon(id);button.insertBefore(wrap,button.firstChild);
+    });
+  }
+  function clockSafe(){
+    const box=$('studyClock');if(!box)return;
+    const d=new Date();box.innerHTML='<strong class="clock-time">'+d.toLocaleTimeString('pt-BR')+'</strong><b class="clock-date">'+d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'})+'</b>';
+  }
+  function normalize(){applyBrandIcons();clockSafe()}
+  normalize();window.addEventListener('load',normalize);setTimeout(normalize,0);setTimeout(normalize,250);setTimeout(normalize,1000);
 })();
