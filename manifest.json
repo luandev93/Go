@@ -3,12 +3,14 @@
   "short_name":"Estudo Dev",
   "version":"1.0.0",
   "description":"Controle de estudos de Go, Rust e PostgreSQL com meta de 1000 horas",
-  "start_url":"./?v=20",
+  "start_url":"./?v=22",
   "scope":"./",
   "display":"standalone",
   "orientation":"portrait-primary",
   "background_color":"#050a12",
   "theme_color":"#050a12",
   "lang":"pt-BR",
-  "icons":[{"src":"icon.svg?v=20","sizes":"512x512","type":"image/svg+xml","purpose":"any"}]
+  "icons":[
+    {"src":"./icon.svg?v=22","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+  ]
 }
