@@ -1,4 +1,4 @@
-const CACHE='aprenda-go-v16';
+const CACHE='aprenda-go-v17';
 const CORE=['./','./index.html','./style.css','./ui-enhancements.css','./app.js','./ui-enhancements.js','./playlist.csv','./rust-playlist.csv','./postgresql-playlist.csv','./manifest.json','./icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
