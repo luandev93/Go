@@ -42,20 +42,21 @@ O catálogo está em `postgresql-playlist.csv`.
 
 O frontend segue uma estética **developer-first**, inspirada em IDEs e terminais:
 
-- Go em azul;
-- Rust com símbolo oficial em branco sobre o tema escuro, garantindo contraste;
-- PostgreSQL em roxo;
+- Go com seu símbolo oficial em azul;
+- Rust com seu símbolo oficial em laranja;
+- PostgreSQL com seu símbolo oficial em azul;
 - painel de progresso geral;
 - meta de 1000 horas;
 - navegação lateral no desktop;
-- navegação inferior no celular;
+- navegação inferior no celular, com uma única instância de cada item;
 - filtros de aulas;
 - busca;
 - links diretos para o YouTube;
-- relógio e data como registro temporal de estudo;
-- linha do tempo de progresso;
-- instalação PWA nativa quando disponibilizada pelo navegador;
+- relógio e data lado a lado, sem o rótulo “REGISTRO DE ESTUDO”;
+- botão de instalação PWA no rodapé;
 - identidade visual compartilhada entre Go, Rust e PostgreSQL.
+
+Os logos das trilhas são SVG locais. A navegação possui uma única fonte de verdade para os ícones, evitando duplicação causada por camadas visuais concorrentes.
 
 ## Persistência atual
 
@@ -71,9 +72,10 @@ O projeto utiliza:
 - `sw.js`;
 - `icon.svg`;
 - Service Worker com cache versionado;
+- invalidação explícita do cache quando há alteração visual relevante;
 - instalação nativa quando o navegador reconhece os critérios de PWA.
 
-A arte principal do aplicativo reúne os símbolos/mascotes de Go, Rust e PostgreSQL e é utilizada como identidade do aplicativo.
+A arte principal do aplicativo é utilizada como identidade do aplicativo.
 
 ## Arquitetura atual
 
@@ -104,6 +106,10 @@ Frontend estático
 ├── ui-v19.css
 ├── app.js
 ├── ui-enhancements.js
+├── fix-v22.js
+├── go.svg
+├── rust.svg
+├── postgres.svg
 ├── playlist.csv
 ├── rust-playlist.csv
 ├── postgresql-playlist.csv
@@ -154,6 +160,8 @@ Próximas evoluções possíveis:
 5. Manter a meta global de 1000 horas como métrica de jornada.
 6. Tratar o histórico local como provisório até existir persistência sincronizada.
 7. Priorizar mudanças incrementais e verificáveis.
+8. Não manter duas camadas concorrentes responsáveis pela mesma correção visual.
+9. Antes de entregar uma alteração visual, validar estrutura, assets, cache e ausência de duplicações.
 
 ## Publicação
 
@@ -162,11 +170,11 @@ O projeto é preparado para GitHub Pages e pode ser utilizado como PWA no navega
 Para testar uma atualização de frontend, use uma query de cache-busting, por exemplo:
 
 ```text
-https://luandev93.github.io/Go/?v=20
+https://luandev93.github.io/Go/?v=26
 ```
 
 ## Estado da release
 
 **v1.0.0 — baseline funcional e visual.**
 
-Esta versão consolida Go, Rust e PostgreSQL, a meta de 1000 horas, o progresso independente, a linha do tempo local, o relógio/data, o PWA e a identidade visual developer-first. Alterações futuras devem partir deste estado e ser registradas no `HANDOFF.md`.
+Esta versão consolida Go, Rust e PostgreSQL, a meta de 1000 horas, o progresso independente, o relógio/data, o PWA e a identidade visual developer-first. Alterações futuras devem partir deste estado e ser registradas no `HANDOFF.md`.
