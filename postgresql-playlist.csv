@@ -1,0 +1,36 @@
+#,Video ID,Title,Duration,Seconds
+1,Z_SPrzlT4Fc,Introdução ao PostgreSQL - Curso de Postgres,10m 2s,602
+2,Phkf71aZL7A,PostgreSQL - Instalação do SGBD no Linux Debian - 01,13m 18s,798
+3,HiI5sRkjf3w,PostgreSQL - Instalando o phpPgAdmin para gerenciamento remoto do SGBD - 02,10m 27s,627
+4,RHMC2LFJaYY,PostgreSQL - Instalação do SGBD no Microsoft Windows - 03,12m 14s,734
+5,wuAdsns3qMA,Como instalar o PostgreSQL no Linux Debian 10,10m 1s,601
+6,Ft3F7wWA-x8,Curso de PostgreSQL - Comandos básicos do utilitário psql,12m 21s,741
+7,HbAJQ1WuGRE,Configurar acesso por senha no psql para o PostgreSQL,16m 15s,975
+8,XqkGdFO-ENc,PostgreSQL - Como criar e excluir usuários com createuser e dropuser,14m 33s,873
+9,I0FJevUrK0E,Como instalar e acessar o pgAdmin4 no Linux Debian  - Curso de PostgreSQL,20m 3s,1203
+10,rw972yYVGcM,Curso de PostgreSQL - Criar e Excluir Bancos de Dados com psql e pgAdmin,17m 36s,1056
+11,qgcRtO6phlY,Curso de PostgreSQL - Tipos de Dados,7m 45s,465
+12,S7r4zQX769g,Curso de PostgreSQL - Como criar tabelas com CREATE TABLE,14m 50s,890
+13,vOJdflliU_E,PostgreSQL - Inserir registros em tabelas com INSERT INTO,14m 41s,881
+14,tjkmWuBTBgY,PostgreSQL - Como realizar consultas simples em tabelas com o comando SELECT,12m 27s,747
+15,myeJ1YWUiS4,Como filtrar consultas com a cláusula WHERE no PostgreSQL,11m 28s,688
+16,DNdgqtJbsIw,PostgreSQL - Ordenar resultados de consultas com ORDER BY,11m 35s,695
+17,aWvU0zesMwc,Curso de PostgreSQL - LIMIT e OFFSET - Limitar resultados de consultas,10m 4s,604
+18,xJycNaQBBBg,Curso de PostgreSQL - Operadores de Comparação em Consultas SQL,8m 59s,539
+19,qJx2khL5Zjo,Curso de PostgreSQL - Operador BETWEEN e intervalos em consultas SQL,9m 15s,555
+20,Loh-PJ36qiU,Curso de PostgreSQL - Cláusula UPDATE - Atualizar dados inseridos nas tabelas,10m 3s,603
+21,7iEVkcwM31E,Apagar registros de uma tabela no PostgreSQL com DELETE FROM e TRUNCATE TABLE,11m 53s,713
+22,HrY_nkrpj4g,10 exemplos de funções de agregação no PostgreSQL,13m 12s,792
+23,Pjytyt9Iogo,Curso de PostgreSQL - Aliases com cláusula AS,9m 7s,547
+24,zCQJbP8E6Tk,PostgreSQL - Consultas em duas ou mais tabelas com INNER JOIN,15m 1s,901
+25,dfGltH1GcXM,Curso de PostgreSQL - Como criar e executar VIEWS,11m 33s,693
+26,w-yqmxdFtig,Como usar Arrays em colunas de tabelas no PostgreSQL,19m 8s,1148
+27,bSZaI20-KnU,10 Exemplos de Operadores Aritméticos no PostgreSQL,15m 59s,959
+28,8C_Qncr3du4,Criar Tabelas Herdadas no PostgreSQL (OO em Bancos de Dados),16m 29s,989
+29,Uv_yDqfxS2s,Como usar tipo JSON em colunas no PostgreSQL,16m 43s,1003
+30,WB4ykHGr7w8,Como criar e usar Materialized Views no PostgreSQL,10m 31s,631
+31,ZBWx-CA0jdk,Backup e Restauração de Banco de Dados PostgreSQL com pg_dump,16m 25s,985
+32,n7D3py_IKVo,Subconsultas (Subqueries) no PostgreSQL,12m 25s,745
+33,oC5ARVrezD0,Funções de Manipulação de Strings no PostgreSQL - Parte I,12m 16s,736
+34,7ogC10CeUo8,Funções de Manipulação de Strings no PostgreSQL - Parte II,17m 47s,1067
+35,Ig1hGqiPROI,Introdução aos Procedimentos Armazenados no PostgreSQL,26m 33s,1593
