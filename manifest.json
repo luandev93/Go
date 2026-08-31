@@ -1,13 +1,13 @@
 {
-  "name":"Aprenda Go + Rust — Controle de Estudos",
-  "short_name":"Estudo Go + Rust",
-  "description":"Controle de estudos de Go e Rust com meta de 1000 horas",
+  "name":"Aprenda Go + Rust + PostgreSQL — Controle de Estudos",
+  "short_name":"Estudo Dev",
+  "description":"Controle de estudos de Go, Rust e PostgreSQL com meta de 1000 horas",
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
   "orientation":"portrait-primary",
-  "background_color":"#06101f",
-  "theme_color":"#0B7EA4",
+  "background_color":"#050a12",
+  "theme_color":"#050a12",
   "lang":"pt-BR",
   "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
