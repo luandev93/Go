@@ -1,50 +1,43 @@
 const $=id=>document.getElementById(id);
 const courses={
-  go:{name:'Aprenda Go',mark:'GO',file:'playlist.csv',key:'aprenda_go_progress_v3',channel:'Curso em Vídeo',person:'Gustavo Guanabara'},
-  rust:{name:'Aprenda Rust',mark:'🦀',file:'rust-playlist.csv',key:'aprenda_rust_progress_v1',channel:'Conteúdo Rust',person:'Professor do canal'}
+  go:{name:'Aprenda Go',mark:'GO',file:'playlist.csv',key:'aprenda_go_progress_v3',channel:'Aprenda Go',person:'Ellen Körbes'},
+  rust:{name:'Aprenda Rust',mark:'🦀',file:'rust-playlist.csv',key:'aprenda_rust_progress_v1',channel:'YouTube',person:'não confirmado'}
+};
+const roadmaps={
+ go:[
+  ['Fundamentos','sintaxe, tipos, variáveis, fluxo e funções',['variável','variavel','tipo','if','for','função','funcao','constante']],
+  ['Estruturas de dados','arrays, slices, maps e structs',['array','slice','map','struct']],
+  ['Métodos e interfaces','métodos, interfaces e composição',['método','metodo','interface']],
+  ['Pacotes e módulos','packages, módulos, dependências e organização',['package','pacote','import','módulo','modulo','go mod']],
+  ['Erros e testes','tratamento de erros, testes e qualidade',['erro','error','test','teste','benchmark','fuzz']],
+  ['Generics','type parameters e constraints',['generic','generics']],
+  ['Concorrência','goroutines, channels e sincronização',['goroutine','channel','canal','concorr','mutex','waitgroup','select']],
+  ['Web e dados','HTTP, JSON, APIs e banco de dados',['http','json','api','rest','banco','database','sql']],
+  ['Produção','segurança, tooling e ecossistema',['deploy','produção','segurança','vulner','docker','cloud']]
+ ],
+ rust:[
+  ['Fundamentos','sintaxe, Cargo, variáveis, tipos, funções e controle',['instalação','cargo','variável','variavel','tipo','função','funcao','if','loop','match']],
+  ['Ownership e borrowing','ownership, referências e lifetimes',['ownership','borrow','borrowing','referência','referencia','lifetime']],
+  ['Structs e enums','structs, enums, pattern matching e módulos',['struct','enum','match','pattern','módulo','modulo']],
+  ['Coleções e iteradores','Vec, String, HashMap, iterators e closures',['vec','string','hashmap','coleção','colecao','iterador','iterator','closure']],
+  ['Traits e generics','traits, generics e tipos associados',['trait','generic','generics']],
+  ['Erros e testes','Result, Option, panic e testes',['result','option','error','erro','panic','test','teste']],
+  ['Concorrência','threads, channels, Send/Sync e async',['thread','channel','concorr','send','sync','async','await']],
+  ['Projetos e ecossistema','Cargo, crates, documentação e projetos',['crate','cargo','cli','projeto','web','api','tokio']]
+ ]
 };
 let current='go',data={};
 function csv(t){const a=[],rows=t.trim().split(/\r?\n/).slice(1);for(const row of rows){let p=[],c='',q=false;for(let i=0;i<row.length;i++){let x=row[i];if(x==='"'){if(q&&row[i+1]==='"'){c+='"';i++}else q=!q}else if(x===','&&!q){p.push(c);c=''}else c+=x}p.push(c);a.push({id:p[0],title:p[2],duration:p[3],seconds:Number(p[4]),url:'https://www.youtube.com/watch?v='+p[1]})}return a}
-async function load(){for(const [id,c] of Object.entries(courses)){const r=await fetch('./'+c.file+'?v=2',{cache:'no-store'});if(!r.ok)throw Error(c.file);data[id]=csv(await r.text())}refresh()}
+async function load(){for(const [id,c] of Object.entries(courses)){const r=await fetch('./'+c.file+'?v=20260831',{cache:'no-store'});if(!r.ok)throw Error(c.file);data[id]=csv(await r.text())}refresh()}
 function doneSet(id=current){try{return new Set(JSON.parse(localStorage.getItem(courses[id].key)||'[]'))}catch{return new Set()}}
 function save(id,set){localStorage.setItem(courses[id].key,JSON.stringify([...set]))}
 function fmt(s){s=Math.max(0,Number(s)||0);const h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=Math.floor(s%60);return h?`${h}h ${m}min`:`${m}min ${String(sec).padStart(2,'0')}s`}
 function stats(id){const v=data[id]||[],d=doneSet(id),done=v.filter(x=>d.has(x.id)),studied=done.reduce((s,x)=>s+x.seconds,0),total=v.reduce((s,x)=>s+x.seconds,0);return{count:done.length,total:v.length,studied,remaining:Math.max(0,total-studied),pct:v.length?Math.round(done.length/v.length*100):0}}
 function render(){const v=data[current]||[],d=doneSet(),q=$('search').value.toLowerCase().trim(),tbody=$('list');tbody.innerHTML='';v.forEach((x,i)=>{if(q&&!x.title.toLowerCase().includes(q))return;const tr=document.createElement('tr');if(d.has(x.id))tr.className='done';const cb=document.createElement('input');cb.type='checkbox';cb.className='check';cb.checked=d.has(x.id);cb.onchange=()=>{cb.checked?d.add(x.id):d.delete(x.id);save(current,d);refresh()};const a=document.createElement('a');a.textContent=x.title;a.href=x.url;a.target='_blank';a.rel='noopener noreferrer';tr.innerHTML='<td></td><td class="num"></td><td></td><td class="time"></td>';tr.children[0].appendChild(cb);tr.children[1].textContent=i+1;tr.children[2].appendChild(a);tr.children[3].textContent=x.duration;tbody.appendChild(tr)})}
-function refresh(){if(!data[current])return;const s=stats(current);$('brandMark').textContent=courses[current].mark;$('courseTitle').textContent=courses[current].name;$('count').textContent=`${s.count} / ${s.total}`;$('studied').textContent=fmt(s.studied);$('remaining').textContent=fmt(s.remaining);$('percent').textContent=s.pct+'%';$('bar').style.width=s.pct+'%';render();progress()}
-function progress(){
- const s=stats(current);
- $('progressBig').textContent=s.pct+'%';
- $('progressTitle').textContent=courses[current].name;
- $('progressSummary').textContent=`${s.count} de ${s.total} aulas concluídas`;
- $('progressWide').style.width=s.pct+'%';
- $('progressDone').textContent=s.count;
- $('progressTotal').textContent=`de ${s.total} aulas`;
- $('progressStudied').textContent=fmt(s.studied);
- $('progressRemaining').textContent=fmt(s.remaining);
- $('progressLanguage').textContent=current==='go'?'Go':'Rust';
- const list=$('courseSummaryList');
- list.innerHTML='';
- for(const id of Object.keys(courses)){
-   const x=stats(id),item=document.createElement('article');item.className='domain-item';
-   item.innerHTML=`<div class="domain-top"><div><strong>${courses[id].mark} ${courses[id].name}</strong><span>${x.count}/${x.total} aulas · ${fmt(x.studied)} estudados</span></div><b>${x.pct}%</b></div><div class="domain-track"><i style="width:${x.pct}%"></i></div><small>${fmt(x.remaining)} restantes · progresso independente</small>`;
-   list.appendChild(item)
- }
-}
-function view(name){
- if(name==='progresso'){$('lessonsView').hidden=true;$('progressView').hidden=false;progress()}
- else{current=name;$('lessonsView').hidden=false;$('progressView').hidden=true;refresh()}
- document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===name));
- window.scrollTo({top:0,behavior:'smooth'})
-}
-$('search').oninput=render;
-$('markVisible').onclick=()=>{const d=doneSet(),q=$('search').value.toLowerCase().trim();(data[current]||[]).forEach(v=>{if(!q||v.title.toLowerCase().includes(q))d.add(v.id)});save(current,d);refresh()};
-$('clearDone').onclick=()=>{save(current,new Set());refresh()};
-document.querySelectorAll('.nav-item').forEach(b=>b.onclick=()=>view(b.dataset.view));
-$('backToLessons').onclick=()=>view(current);
-let deferredPrompt=null,installBtn=$('nativeInstall');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;installBtn.classList.add('install-ready')});
-installBtn.onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null};
-window.addEventListener('appinstalled',()=>installBtn.hidden=true);
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-load().catch(()=>{$('list').innerHTML='<tr><td colspan="4">Não foi possível carregar as playlists.</td></tr>'});
+function classify(id,title){const t=String(title||'').toLowerCase(),groups=roadmaps[id]||[];let best=-1,bestScore=0;groups.forEach((g,i)=>{let score=0;g[2].forEach(k=>{if(t.includes(k))score++});if(score>bestScore){best=i;bestScore=score}});return best}
+function breadth(id){const v=data[id]||[],d=doneSet(id),groups=roadmaps[id]||[];const rows=groups.map((g,i)=>{const related=v.filter(x=>classify(id,x.title)===i),completed=related.filter(x=>d.has(x.id)).length,pct=related.length?Math.round(completed/related.length*100):0;return{name:g[0],desc:g[1],related,completed,pct}});const active=rows.filter(x=>x.related.length),covered=active.length?Math.round(active.reduce((s,x)=>s+x.pct,0)/active.length):0;return{rows,covered,uncovered:100-covered}}
+function renderBreadth(b){let box=$('breadthPanel');if(!box){const anchor=document.querySelector('.roadmap-section');if(!anchor)return;box=document.createElement('div');box.id='breadthPanel';box.className='breadth-panel';anchor.appendChild(box)}const c=courses[current];box.innerHTML=`<div class="section-title"><div><p class="eyebrow">VASTIDÃO DO CONTEÚDO</p><h3>${c.name}: percorrido × ainda por explorar</h3></div><span>${b.covered}% / ${b.uncovered}%</span></div><p class="roadmap-intro">Isto não é domínio da linguagem. É uma estimativa de cobertura: quanto dos grandes domínios já apareceu nas aulas que você concluiu e quanto ainda não foi percorrido pela trilha atual.</p><div class="domain-list">${b.rows.map(r=>`<article class="domain-item"><div class="domain-top"><div><strong>${r.name}</strong><span>${r.desc}</span></div><b>${r.pct}%</b></div><div class="domain-track"><i style="width:${r.pct}%"></i></div><small>${r.completed}/${r.related.length} aulas relacionadas concluídas</small></article>`).join('')}</div>`}
+function progress(){const s=stats(current),c=courses[current];$('progressBig').textContent=s.pct+'%';$('progressTitle').textContent=c.name+' — '+s.pct+'% da playlist';$('progressSummary').textContent=`${s.count} de ${s.total} aulas concluídas · ${c.channel} · ${c.person}`;$('progressWide').style.width=s.pct+'%';$('progressDone').textContent=s.count;$('progressTotal').textContent=`de ${s.total} aulas`;$('progressStudied').textContent=fmt(s.studied);$('progressRemaining').textContent=fmt(s.remaining);$('progressLanguage').textContent=current==='go'?'Go':'Rust';const list=$('courseSummaryList');list.innerHTML='';for(const id of Object.keys(courses)){const x=stats(id),c2=courses[id],b=breadth(id),item=document.createElement('article');item.className='domain-item course-summary';item.innerHTML=`<div class="domain-top"><div><strong>${c2.mark} ${id.toUpperCase()} · ${c2.channel}</strong><span>${c2.person} · ${x.count}/${x.total} aulas · ${fmt(x.studied)} estudados</span></div><b>${x.pct}%</b></div><div class="domain-track"><i style="width:${x.pct}%"></i></div><small>${fmt(x.remaining)} restantes · playlist fiel à fonte</small><div class="breadth-mini"><div><span>Amplitude da linguagem</span><strong>${b.covered}% percorrida</strong></div><div class="breadth-track"><i style="width:${b.covered}%"></i></div><small>${b.uncovered}% ainda não percorrida no mapa amplo</small></div>`;list.appendChild(item)}renderBreadth(breadth(current))}
+function refresh(){if(!data[current])return;const s=stats(current),c=courses[current];$('brandMark').textContent=c.mark;$('courseTitle').textContent=c.name;$('count').textContent=`${s.count} / ${s.total}`;$('studied').textContent=fmt(s.studied);$('remaining').textContent=fmt(s.remaining);$('percent').textContent=s.pct+'%';$('bar').style.width=s.pct+'%';render();progress()}
+function view(name){if(name==='progresso'){$('lessonsView').hidden=true;$('progressView').hidden=false;progress()}else{current=name;$('lessonsView').hidden=false;$('progressView').hidden=true;refresh()}document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===name));window.scrollTo({top:0,behavior:'smooth'})}
+$('search').oninput=render;$('markVisible').onclick=()=>{const d=doneSet(),q=$('search').value.toLowerCase().trim();(data[current]||[]).forEach(v=>{if(!q||v.title.toLowerCase().includes(q))d.add(v.id)});save(current,d);refresh()};$('clearDone').onclick=()=>{save(current,new Set());refresh()};document.querySelectorAll('.nav-item').forEach(b=>b.onclick=()=>view(b.dataset.view));$('backToLessons').onclick=()=>view(current);let deferredPrompt=null,installBtn=$('nativeInstall');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.hidden=false;installBtn.classList.add('install-ready')});installBtn.onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null};window.addEventListener('appinstalled',()=>installBtn.hidden=true);if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));load().catch(()=>{$('list').innerHTML='<tr><td colspan="4">Não foi possível carregar as playlists.</td></tr>'});
