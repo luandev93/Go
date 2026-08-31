@@ -1,74 +1,240 @@
 # Go + Rust — Controle de Estudos
 
-Aplicação web estática para acompanhar conteúdos de estudo de **Go** e **Rust**, marcar aulas concluídas e visualizar o progresso de cada linguagem de forma independente.
+Aplicação web/PWA para acompanhar uma jornada contínua de estudos em programação. O projeto começou com **Go** e **Rust**, mas a arquitetura agora é preparada para receber novas linguagens, cursos e aulas sem alterar o conceito central.
 
 ## Objetivo
 
-O projeto funciona como um painel pessoal de estudo para playlists e trilhas técnicas. Cada linguagem possui seu próprio conteúdo, seus próprios checkboxes, seu próprio tempo estudado e seu próprio progresso salvo no navegador.
+O objetivo deixou de ser apenas concluir playlists individuais. O projeto passa a representar uma **jornada global de 1000 horas de estudo**.
+
+Cada linguagem continua tendo seu próprio conteúdo e seu próprio progresso interno, mas todas contribuem para uma única meta:
+
+> **1000 horas de estudo = 100% da jornada.**
+
+Assim, Go, Rust, Python, C/C++, JavaScript ou qualquer futura linguagem podem fazer parte da mesma evolução.
+
+## Modelo de progresso
+
+O painel de progresso utiliza três níveis diferentes:
+
+### 1. Progresso global
+
+A métrica principal é:
+
+```text
+horas estudadas em todos os conteúdos / 1000 horas × 100
+```
+
+Exemplo:
+
+| Conteúdo | Horas estudadas | Contribuição para 1000h |
+|---|---:|---:|
+| Go | 21h17min | 2,13% |
+| Rust | 8h | 0,80% |
+| Python | 0h | 0,00% |
+| **Total** | **29h17min** | **2,93%** |
+
+A contribuição de uma linguagem para a meta global não depende da quantidade de aulas existentes nela. Ela depende do **tempo efetivamente estudado**.
+
+### 2. Progresso interno da linguagem
+
+Cada linguagem também pode mostrar seu próprio percentual em relação ao conteúdo cadastrado.
+
+Por exemplo:
+
+```text
+Go
+21h17min estudadas / 21h17min cadastradas = 100%
+```
+
+Esse percentual responde à pergunta **"quanto deste conteúdo eu concluí?"**, enquanto a meta global responde **"quanto da minha jornada de 1000 horas eu percorri?"**.
+
+### 3. Progresso por curso/aula
+
+Cada aula pode ser marcada individualmente. O tempo da aula é contabilizado quando ela é concluída.
 
 ## Conteúdos atuais
 
 ### Go
 
-- Playlist com **184 aulas**
+- **184 aulas**
 - Aproximadamente **21h17min** de conteúdo
 - Títulos, duração e links individuais
 - Filtro por título
 - Conclusão em lote das aulas visíveis
-- Progresso salvo localmente
+- Progresso independente
 
 ### Rust
 
-- Playlist independente com **42 aulas**
+- **42 aulas**
+- Playlist independente
 - Títulos, duração e links individuais
-- Progresso separado do conteúdo de Go
-- Checkboxes e tempo estudado independentes
+- Progresso separado de Go
+
+### Próximas linguagens
+
+A arquitetura foi pensada para permitir adicionar novas trilhas sem reconstruir o aplicativo.
+
+Exemplo futuro:
+
+```text
+Go
+Rust
+Python
+TypeScript
+C
+C++
+Java
+SQL
+Docker
+Kubernetes
+...
+```
+
+A meta continua sendo a mesma: **1000 horas globais**.
 
 ## Recursos
 
 - Aba **Go**
 - Aba **Rust**
 - Aba **Progresso**
-- Checkboxes com persistência em `localStorage`
-- Progresso independente por linguagem
-- Contagem de aulas concluídas
+- Meta global de **1000 horas**
+- Contribuição individual de cada linguagem para a meta global
+- Progresso interno de cada linguagem
+- Checkboxes por aula
+- Persistência local via `localStorage`
 - Tempo estudado
 - Tempo restante
 - Percentual de conclusão
 - Filtro por título
 - Conclusão em lote das aulas filtradas
-- Comparação visual entre os dois conteúdos
 - Interface responsiva para celular e desktop
-- Mapa estimado dos principais domínios técnicos
-- Instalação como PWA quando o navegador disponibiliza o prompt nativo
+- PWA quando o navegador disponibiliza instalação nativa
 - Cache offline básico via Service Worker
 
-## Como funciona o progresso
+## Como adicionar conteúdo
 
-Os dados de progresso não são compartilhados entre as linguagens.
+A ideia arquitetural é que o crescimento do catálogo não exija reconstruir a aplicação.
 
-Marcar uma aula em **Go** não altera o progresso de **Rust**, e marcar uma aula em Rust não altera Go.
+A hierarquia planejada é:
 
-Cada conteúdo possui uma chave própria no `localStorage`, permitindo acompanhar as duas trilhas separadamente no mesmo navegador.
+```text
+Linguagem
+  └── Curso
+       └── Aula
+            ├── título
+            ├── duração em segundos
+            ├── ordem
+            └── URL
+```
 
-O painel **Progresso** consolida visualmente os dois conteúdos sem misturar os percentuais ou os tempos.
+Novas aulas podem ser acrescentadas ao catálogo preservando o histórico das aulas já concluídas.
 
-## Mapa de domínio
+## Cálculo de duração de playlists
 
-Além da conclusão literal das playlists, o projeto apresenta um mapa estimado de evolução por domínio técnico.
+Para levantar a duração total de playlists do YouTube e preparar novos conteúdos para o controle, uma ferramenta útil é o **UTubeToolkit — YouTube Playlist Duration Calculator**.
 
-No caso de Go, os temas incluem:
+Ela permite informar uma URL de playlist e obter métricas como duração total, quantidade de vídeos, duração média, vídeo mais longo/curto e estimativas de tempo em diferentes velocidades de reprodução. Também oferece exportação dos dados da playlist em CSV ou JSON. citeturn0search0
 
-- Fundamentos da linguagem
-- Fluxo e decisões
-- Dados e estruturas
-- Funções e organização
-- Interfaces e abstração
-- Concorrência
-- Qualidade e confiabilidade
-- Ecossistema e produção
+urlUTubeToolkit — YouTube Playlist Duration Calculatorhttps://utubetoolkit.com/youtube-playlist-duration-calculator/?utm_source=chatgpt.com
 
-Esse mapa é uma estimativa pedagógica baseada nos conteúdos estudados. Ele não representa certificação ou domínio completo das linguagens. Documentação, prática deliberada, exercícios, testes e projetos continuam necessários.
+Esse tipo de ferramenta pode ser utilizado como etapa auxiliar para **catalogação de novas trilhas**. O controle de estudos continua sendo a fonte do progresso pessoal e dos checkboxes.
+
+## Precisão temporal
+
+As durações devem ser tratadas internamente em **segundos**, preferencialmente como `BIGINT` no banco de dados.
+
+Exemplo:
+
+```text
+5min 09s = 309 segundos
+```
+
+Isso evita perda de precisão ao somar centenas ou milhares de aulas.
+
+A meta global de 1000 horas equivale a:
+
+```text
+3.600.000 segundos
+```
+
+## Arquitetura de dados planejada
+
+A estrutura de longo prazo segue:
+
+```text
+language
+  └── course
+       └── lesson
+            └── lesson_progress
+```
+
+Com PostgreSQL preparado para:
+
+- linguagens;
+- cursos;
+- aulas;
+- duração em segundos;
+- URLs de origem;
+- progresso por aula;
+- usuários;
+- dispositivos;
+- sincronização futura;
+- histórico de conclusão;
+- conteúdos ativos/inativos.
+
+## Railway
+
+O projeto de infraestrutura **ESTUDOS** foi criado no Railway com PostgreSQL persistente.
+
+O banco foi planejado como camada de dados para a evolução do projeto, enquanto o frontend continua podendo funcionar de forma independente com `localStorage`.
+
+Arquitetura alvo:
+
+```text
+GitHub Pages / PWA
+        │
+        ▼
+Frontend de Estudos
+        │
+        │ sincronização futura
+        ▼
+API
+        │
+        ▼
+PostgreSQL — Railway
+```
+
+O uso de `localStorage` como fallback permite continuar estudando mesmo sem depender da API.
+
+## Escalabilidade do catálogo
+
+O projeto deve crescer **por dados, não por código**.
+
+Adicionar uma nova linguagem não deve exigir uma nova página específica. O modelo deve permitir:
+
+```text
+INSERT language
+INSERT course
+INSERT lessons
+```
+
+e o frontend descobrir automaticamente o novo conteúdo.
+
+Essa decisão é importante porque a meta é continuar adicionando aulas e linguagens conforme a jornada de estudo avançar.
+
+## Persistência
+
+No modo atual, o progresso é salvo automaticamente no navegador.
+
+Isso significa que limpar os dados do navegador ou mudar de dispositivo não transfere automaticamente o histórico.
+
+A arquitetura PostgreSQL/Railway prepara a próxima etapa: **sincronização multi-dispositivo**.
+
+## Instalação no celular
+
+Quando publicado em HTTPS e atendendo aos requisitos de PWA, o navegador pode disponibilizar a instalação nativa.
+
+Caso o prompt de instalação não apareça, utilize as opções nativas do navegador, como **Adicionar à tela inicial** ou **Instalar aplicativo**, quando disponíveis.
 
 ## Estrutura do projeto
 
@@ -92,40 +258,28 @@ Esse mapa é uma estimativa pedagógica baseada nos conteúdos estudados. Ele n�
 
 - HTML5
 - CSS3
-- JavaScript puro
+- JavaScript
 - LocalStorage
 - Web App Manifest
 - Service Worker
 - Progressive Web App
+- PostgreSQL
+- Railway
 - GitHub Actions
 - GitHub Pages
 
-## Uso
-
-Abra a aplicação publicada ou o `index.html` em um navegador compatível.
-
-1. Escolha **Go** ou **Rust**.
-2. Marque cada aula concluída.
-3. Use o filtro para localizar conteúdos específicos.
-4. Acompanhe o avanço individual de cada linguagem.
-5. Abra a aba **Progresso** para visualizar o estado geral dos estudos.
-
-## Persistência
-
-O progresso é salvo automaticamente no navegador utilizado.
-
-Isso significa que limpar os dados do navegador ou abrir o projeto em outro dispositivo não transfere automaticamente o histórico de estudo.
-
-## Instalação no celular
-
-Quando a aplicação estiver publicada em um ambiente compatível e o navegador liberar o evento nativo de instalação, o botão de instalação poderá abrir o prompt do próprio navegador.
-
-Caso o navegador não disponibilize esse prompt, utilize as opções nativas do menu, como **Adicionar à tela inicial** ou **Instalar aplicativo**, quando disponíveis.
-
 ## Publicação
 
-O repositório possui workflow preparado para publicação no GitHub Pages após alterações na branch `main`.
+O frontend é publicado pelo **GitHub Pages** através de GitHub Actions.
+
+O projeto também possui infraestrutura PostgreSQL no Railway para a evolução da camada de dados.
 
 ## Status
 
-O projeto está estruturado como uma aplicação de estudo multilíngue, atualmente com trilhas independentes de **Go** e **Rust**. Novas linguagens podem ser adicionadas seguindo o mesmo modelo de conteúdo e persistência separada.
+O projeto está em evolução como um **controle de jornada de estudos de 1000 horas**.
+
+Atualmente existem trilhas de **Go** e **Rust**. Novas linguagens e cursos podem ser incorporados sem alterar a meta global.
+
+### Princípio central
+
+> **As linguagens são os caminhos. As 1000 horas são a jornada.**
